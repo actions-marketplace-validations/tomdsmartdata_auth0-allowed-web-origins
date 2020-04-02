@@ -1,0 +1,37 @@
+# action.yml
+name: "Auth0 Allowed Web Origins"
+description: "Add/Remove an Allowed Web Origin to an Auth0 application"
+inputs:
+  auth0-domain: # id of input
+    description: "The domain of the application in Auth0"
+    required: true
+  auth0-mgmt-client-id:
+    description: "The client id used when acquiring a token for the Auth0 mgmt api"
+    required: true
+  auth0-mgmt-client-secret:
+    description: "The client secret used when acquiring a token for the Auth0 mgmt api"
+    required: true
+  auth0-app-id:
+    description: "The application id to add/remove the allowed web origin field"
+    required: true
+  origin:
+    description: "The origin to be added/removed from the Auth0 application"
+    required: true
+  remove:
+    description: "Should the origin be removed from the application? If false, the origin is added to the application"
+    required: true
+    default: false
+runs:
+  using: "docker"
+  image: "Dockerfile"
+  env:
+    AUTH0_DOMAIN: ${{ inputs.auth0-domain }}
+    AUTH0_MANAGEMENT_CLIENT_ID: ${{ inputs.auth0-mgmt-client-id }}
+    AUTH0_MANAGEMENT_CLIENT_SECRET: ${{ inputs.auth0-mgmt-client-secret }}
+    APP_ID: ${{ inputs.auth0-app-id }}
+    ORIGIN: ${{ inputs.origin }}
+  args:
+    - "${{ inputs.remove }}"
+branding:
+  icon: 'star'
+  color: 'red'
