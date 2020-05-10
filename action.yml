@@ -33,5 +33,5 @@ runs:
   args:
     - "${{ inputs.remove }}"
 branding:
-  icon: 'star'
-  color: 'red'
+  icon: 'shield'
+  color: 'orange'
