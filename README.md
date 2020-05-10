@@ -13,9 +13,9 @@ This is a docker container Github Action that supports updating the Allowed Web 
 
 ## Example Usage to Add `https://localhost`
 ```yaml
-uses: tomdsmartdata/auth0-allowed-web-origins
+uses: tomdsmartdata/auth0-allowed-web-origins@v1
 with:
-    auth0-domain: https://dev-1acu2c4b.auth0.com@v1
+    auth0-domain: https://dev-1acu2c4b.auth0.com
     auth0-mgmt-client-id: heRjegYPwEaJFj76t7x8AJYLGPsbB4Ts
     auth0-mgmt-client-secret: tRSQ7orA2AWqiZabpBVIAbhHB-E4j21fXWrAgw366EOcGtyuSvFrRMOd6w08vqgY
     auth0-app-id: wwxzTeQ3z33Gowt1vCIxJRTNs3FxjZd1
